@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lin'er Zhang - Undergraduate researcher in computer vision, remote sensing data analysis, and multimodal learning.">
+  <title>Lin'er Zhang | Personal Homepage</title>
+  <style>
+    :root {
+      --pink: #f0b1e8;
+      --pink-deep: #cf74c7;
+      --blue: #4fa0e6;
+      --blue-deep: #377fb9;
+      --gradient: linear-gradient(135deg, var(--pink), var(--blue));
+      --background: #f4f6f8;
+      --card: #ffffff;
+      --card-soft: #f7f8fa;
+      --text: #222733;
+      --muted: #6e7580;
+      --soft: #939aa5;
+      --line: #e4e7eb;
+      --shadow: 0 8px 24px rgba(50, 63, 80, 0.07);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(240, 177, 232, 0.13), transparent 25%),
+        radial-gradient(circle at 85% 5%, rgba(79, 160, 230, 0.11), transparent 24%),
+        var(--background);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 700px) 250px;
+      gap: 28px;
+      align-items: start;
+      max-width: 1310px;
+      margin: 0 auto;
+      padding: 30px 24px 70px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      position: sticky;
+      top: 28px;
+      overflow: hidden;
+    }
+
+.profile-photo {
+  display: block;
+  width: calc(100% - 26px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  margin: 13px;
+  border-radius: 13px;
+  object-fit: cover;
+      object-position: center;
+      background: linear-gradient(135deg, rgba(240, 177, 232, 0.35), rgba(79, 160, 230, 0.35));
+    }
+
+    .profile-content {
+      padding: 4px 20px 24px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 5px 0 10px;
+      font-size: 1.48rem;
+      line-height: 1.2;
+    }
+
+    .chinese-name {
+      margin-left: 4px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .pronouns {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      color: #6d7480;
+      background: #eef2f5;
+      font-size: 0.69rem;
+      font-weight: 750;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .profile-role {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.89rem;
+    }
+
+    .profile-school {
+      margin: 3px 0 18px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 2px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .contact-link {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      padding: 8px 6px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.4;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+    }
+
+    .contact-link:hover,
+    .contact-link:focus-visible {
+      color: var(--blue-deep);
+      background: rgba(79, 160, 230, 0.08);
+      transform: translateX(2px);
+    }
+
+    .contact-icon {
+      color: var(--blue-deep);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .main-column {
+      min-width: 0;
+    }
+
+    .top-nav {
+      position: sticky;
+      z-index: 10;
+      top: 20px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.91);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .top-nav a {
+      padding: 9px 18px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .top-nav a:first-child {
+      color: #fff;
+      background: var(--gradient);
+      box-shadow: 0 5px 14px rgba(207, 116, 199, 0.28);
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus-visible {
+      color: var(--blue-deep);
+      background: rgba(79, 160, 230, 0.08);
+    }
+
+    .top-nav a:first-child:hover {
+      color: #fff;
+      background: var(--gradient);
+    }
+
+    .content-card {
+      scroll-margin-top: 105px;
+      margin-bottom: 24px;
+      padding: 28px 30px;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .section-heading h2,
+    .section-heading h3 {
+      margin: 0;
+      color: var(--pink-deep);
+      font-size: 0.73rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-heading::after {
+      height: 1px;
+      background: linear-gradient(90deg, var(--line), transparent);
+      content: "";
+    }
+
+    .lead {
+      margin: 0 0 19px;
+      font-size: 1.08rem;
+      font-weight: 650;
+      line-height: 1.65;
+    }
+
+    .about-copy {
+      color: #4f5661;
+      font-size: 0.93rem;
+    }
+
+    .about-copy p {
+      margin: 0 0 16px;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inline-link {
+      color: var(--blue-deep);
+      font-weight: 650;
+      text-decoration-color: rgba(55, 127, 185, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .education-timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .education-timeline::before {
+      position: absolute;
+      top: 7px;
+      bottom: 7px;
+      left: 7px;
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--pink), var(--blue));
+      content: "";
+    }
+
+    .education-item {
+      position: relative;
+      padding: 2px 0;
+    }
+
+    .education-item::before {
+      position: absolute;
+      top: 5px;
+      left: -29px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: var(--gradient);
+      box-shadow: 0 0 0 2px rgba(79, 160, 230, 0.20);
+      content: "";
+    }
+
+    .education-date {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: var(--blue-deep);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .education-item h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .education-degree {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .research-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .research-card {
+      display: grid;
+      grid-template-columns: 155px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .research-card:hover {
+      border-color: rgba(79, 160, 230, 0.32);
+      box-shadow: 0 8px 18px rgba(50, 63, 80, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .research-card-visual {
+      grid-template-columns: minmax(180px, 34%) minmax(0, 1fr);
+      align-items: stretch;
+    }
+
+    .research-card-compact {
+      grid-template-columns: 1fr;
+      padding: 18px 20px;
+      background: var(--card-soft);
+    }
+
+    .research-preview {
+      position: relative;
+      display: grid;
+      min-height: 96px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.95);
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.5), transparent 24%),
+        var(--gradient);
+      font-size: 1.1rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+    }
+
+    .research-preview::after {
+      position: absolute;
+      right: -28px;
+      bottom: -38px;
+      width: 95px;
+      height: 95px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .research-image {
+      display: block;
+      width: 100%;
+      height: 96px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .research-card-visual .research-image {
+      height: 100%;
+      min-height: 170px;
+    }
+
+    .research-title {
+      margin: 0 0 5px;
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .research-meta {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
+    .research-description {
+      margin: 0;
+      color: #5f6671;
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      padding: 3px 9px;
+      border-radius: 999px;
+      color: var(--blue-deep);
+      background: rgba(79, 160, 230, 0.10);
+      font-size: 0.66rem;
+      font-weight: 750;
+    }
+
+    .tag.pink {
+      color: #a34d9a;
+      background: rgba(240, 177, 232, 0.22);
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 0;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      left: 7px;
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--pink), var(--blue));
+      content: "";
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      padding: 0 0 26px;
+    }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 3px;
+      left: -29px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: var(--gradient);
+      box-shadow: 0 0 0 2px rgba(79, 160, 230, 0.20);
+      content: "";
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-date {
+      color: var(--blue-deep);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 3px;
+      font-size: 0.9rem;
+    }
+
+    .timeline-org {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .timeline-item ul {
+      margin: 0;
+      padding-left: 17px;
+      color: #5f6671;
+      font-size: 0.78rem;
+    }
+
+    .timeline-item li + li {
+      margin-top: 5px;
+    }
+
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-panel {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--card-soft);
+    }
+
+    .mini-panel h3 {
+      margin: 0 0 8px;
+      font-size: 0.9rem;
+    }
+
+    .mini-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.77rem;
+    }
+
+    .award-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .award-list li {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: #555c67;
+      font-size: 0.76rem;
+    }
+
+    .award-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .award-list span:last-child {
+      color: var(--soft);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: #fff;
+      font-size: 0.7rem;
+      font-weight: 650;
+    }
+
+    .news-column {
+      position: sticky;
+      top: 28px;
+    }
+
+    .news-card {
+      padding: 20px;
+    }
+
+    .news-title {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 17px;
+      color: #53606f;
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .news-title::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gradient);
+      content: "";
+    }
+
+    .news-item {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card-soft);
+    }
+
+    .news-item + .news-item {
+      margin-top: 11px;
+    }
+
+    .news-labels {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .news-date,
+    .news-badge {
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.63rem;
+      font-weight: 800;
+    }
+
+    .news-date {
+      color: var(--blue-deep);
+      background: rgba(79, 160, 230, 0.10);
+    }
+
+    .news-badge {
+      color: #a34d9a;
+      background: rgba(240, 177, 232, 0.28);
+    }
+
+    .news-item p {
+      margin: 0;
+      font-size: 0.75rem;
+      font-weight: 650;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 12px 4px 0;
+      color: var(--soft);
+      font-size: 0.68rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1120px) {
+      .layout {
+        grid-template-columns: 250px minmax(0, 1fr);
+        max-width: 980px;
+      }
+
+      .news-column {
+        position: static;
+        grid-column: 2;
+      }
+
+      .news-card {
+        margin-top: -4px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .layout {
+        display: block;
+        padding: 18px 14px 45px;
+      }
+
+      .profile-card,
+      .news-column {
+        position: static;
+      }
+
+      .profile-card {
+        margin-bottom: 18px;
+      }
+
+      .top-nav {
+        top: 8px;
+        overflow-x: auto;
+        margin-bottom: 18px;
+      }
+
+      .top-nav a {
+        flex: none;
+      }
+
+      .content-card {
+        padding: 23px 20px;
+      }
+
+      .research-card,
+      .research-card-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .research-preview {
+        min-height: 120px;
+      }
+
+      .research-image {
+        height: 150px;
+      }
+
+      .research-card-visual .research-image {
+        height: 230px;
+        min-height: 230px;
+      }
+
+      .beyond-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-column {
+        margin-top: 18px;
+      }
+    }
+
+    @media (max-width: 470px) {
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <aside class="profile-card card" aria-label="Profile">
+      <img class="profile-photo" src="profile.jpg" alt="Portrait of Lin'er Zhang">
+      <div class="profile-content">
+        <h1>Lin'er Zhang <span class="chinese-name">张淋迩</span></h1>
+        <span class="pronouns">She / Her</span>
+        <p class="profile-role">Undergraduate Researcher</p>
+        <p class="profile-school">China University of Geosciences (Wuhan)</p>
+
+        <div class="contact-list" aria-label="Contact information">
+          <a class="contact-link" href="mailto:zhangliner0105@gmail.com">
+            <span class="contact-icon">@</span><span>zhangliner0105@gmail.com</span>
+          </a>
+          <a class="contact-link" href="mailto:zhangliner0105@hotmail.com">
+            <span class="contact-icon">@</span><span>zhangliner0105@hotmail.com</span>
+          </a>
+          <a class="contact-link" href="mailto:zhangliner0105@cug.edu.cn">
+            <span class="contact-icon">@</span><span>zhangliner0105@cug.edu.cn</span>
+          </a>
+        </div>
+
+      </div>
+    </aside>
+
+    <main class="main-column">
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#beyond">Beyond</a>
+      </nav>
+
+      <section class="content-card card" id="about">
+        <div class="section-heading"><h2>About Me</h2></div>
+        <p class="about-copy">
+          I’m curious about new ideas and enjoy learning by trying things out. I try to
+          be patient with both people and problems. When something gets difficult, I
+          usually slow down, work through it step by step, and keep going.
+        </p>
+        <div class="about-copy">
+          <p>
+            A lot of my free time revolves around music. I play the guitar, piano, and
+            cello, and I enjoy going to live performances. I also like hiking whenever
+            I get the chance.
+          </p>
+          <p>
+            Volunteering has also been an important part of my life, and I have completed
+            more than 200 hours of community service.
+          </p>
+          <p class="lead">
+            My research currently focuses on computer vision and remote sensing. In the
+            future, I hope to learn more from the humanities and social sciences and explore
+            how technology can become more thoughtful, inclusive, and genuinely useful, especially
+            for people who may otherwise be left out of the design process.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-card card" id="education">
+        <div class="section-heading"><h2>Education</h2></div>
+        <div class="education-timeline">
+          <article class="education-item">
+            <time class="education-date">2023–2027 (Expected)</time>
+            <h3>
+              <a class="inline-link" href="https://en.cug.edu.cn/" target="_blank" rel="noopener">
+                China University of Geosciences (Wuhan)
+              </a>
+            </h3>
+            <p class="education-degree">B.Eng. in Computer Science and Technology</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-card card" id="research">
+        <div class="section-heading"><h2>Research &amp; Publications</h2></div>
+        <div class="research-list">
+          <article class="research-card research-card-visual">
+            <img class="research-image" src="publication-uis.png" alt="Graphical abstract of the urban informal settlement classification research">
+            <div>
+              <h3 class="research-title">Urban Informal Settlement Classification via Cross-Scale Hierarchical Perception Fusion Network Using Remote Sensing and Street View Images</h3>
+              <p class="research-meta"><em>Remote Sensing</em> · SCI, JCR Q2</p>
+              <p class="research-description">
+                Proposed PanFusion-Net for cross-view fusion of remote sensing and street-view imagery,
+                achieving 96.14% accuracy and outperforming Trans-MDCNN by 8.95%.
+              </p>
+              <div class="research-tags"><span class="tag">Published</span><span class="tag pink">Remote Sensing</span></div>
+            </div>
+          </article>
+
+          <article class="research-card research-card-visual">
+            <img class="research-image" src="publication-llm-architecture.png" alt="Architecture of the natural resources monitoring foundation model">
+            <div>
+              <h3 class="research-title">From Computing System to Large Foundation Model: A Survey on the Evolution of Architecture and Key Technologies</h3>
+              <p class="research-meta"><em>Cluster Computing</em></p>
+              <p class="research-description">
+                Systematically organizes major components and representative frameworks across the
+                LLM lifecycle, with analysis of architectural trends and open challenges.
+              </p>
+              <div class="research-tags"><span class="tag pink">Under Review</span><span class="tag">Visual Large Model</span></div>
+            </div>
+          </article>
+
+          <article class="research-card research-card-compact">
+            <div>
+              <h3 class="research-title">Large Language Model for Remote Sensing Data Recommendation</h3>
+              <div class="research-tags"><span class="tag">In Progress</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-card card" id="experience">
+        <div class="section-heading"><h2>Experience</h2></div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <time class="timeline-date">Jul–Aug 2025</time>
+            <div>
+              <h3>Research Intern</h3>
+              <p class="timeline-org">Institute of Automation, Chinese Academy of Sciences</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <time class="timeline-date">Jul–Aug 2024</time>
+            <div>
+              <h3>Data Analysis Intern</h3>
+              <p class="timeline-org">Information Department, Xingfa Group</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-card card" id="beyond">
+        <div class="section-heading"><h2>Beyond Research</h2></div>
+        <ul class="award-list" aria-label="Honors and awards in reverse chronological order">
+          <li><span>University Innovation Application Competition · First Prize</span><span>2026</span></li>
+          <li><span>19th “Challenge Cup” AI+ Competition · National Second Prize</span><span>2025</span></li>
+          <li><span>MCM/ICM Mathematical Contest in Modeling · Honorable Mention</span><span>2025</span></li>
+          <li><span>China International “Internet+” Innovation Competition · Provincial Silver</span><span>2025</span></li>
+          <li><span>MathorCup Mathematical Modeling Competition · National Second Prize</span><span>2024</span></li>
+          <li><span>DingTalk Big Data Challenge · National Third Prize</span><span>2024</span></li>
+        </ul>
+      </section>
+
+      <footer>© 2026 Lin'er Zhang · Personal Academic Homepage</footer>
+    </main>
+
+    <aside class="news-column" aria-label="News">
+      <section class="news-card card">
+        <h2 class="news-title">News</h2>
+        <article class="news-item">
+          <div class="news-labels"><span class="news-date">2026</span><span class="news-badge">New</span></div>
+          <p>Our survey on large language model system architectures is under review at a Springer journal.</p>
+        </article>
+        <article class="news-item">
+          <div class="news-labels"><span class="news-date">Current</span></div>
+          <p>Conducting experiments on large-model-based remote sensing data recommendation.</p>
+        </article>
+      </section>
+    </aside>
+  </div>
+</body>
+</html>
